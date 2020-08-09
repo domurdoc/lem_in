@@ -37,7 +37,8 @@ void	msg_error_duplicate_coord(t_data *data)
 	ft_dprintf(STDERR_FILENO, "%d rooms with coordinates %{5}(%d, %d)%{0}:\n",
 			i - data->k, coord >> 32, coord & 0xFFFF);
 	while (data->k < i)
-		ft_dprintf(STDERR_FILENO, "- %{2}\"%s\"%{0}\n", CRD(i)->r->name);
+		ft_dprintf(STDERR_FILENO, "- %{2}\"%s\"%{0}\n",
+			CRD(data->k++)->r->name);
 }
 
 void	msg_error_graph(t_data *data)
