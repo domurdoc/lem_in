@@ -21,6 +21,6 @@ void		init_rooms_check(t_data *data)
 	room_del(ROOM(--N_ROOMS));
 	(void)ar_quicksort(data->rooms);
 	check_names(data);
-	if (RAND_MODE && VIS_MODE)
+	if (!(data->flags & RANDOMIZE) && data->flags & GRAPHICS)
 		init_coord_check(data);
 }

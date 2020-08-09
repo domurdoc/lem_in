@@ -1,6 +1,6 @@
 #include "lem_in.h"
 
-static t_room	*find_room(t_array *ar, char *name)
+t_room		*find_room(t_array *ar, char *name)
 {
 	int32_t	cmp;
 	int32_t	left;
@@ -22,18 +22,18 @@ static t_room	*find_room(t_array *ar, char *name)
 	return (NULL);
 }
 
-static void		link_rooms(t_room *r1, t_room *r2, t_data *data)
+static void	link_rooms(t_room *r1, t_room *r2, t_data *data)
 {
 	if (!link_exists(r1, r2))
 	{
 		link_add(r1, r2, 1, data);
 		link_add(r2, r1, 1, data);
 	}
-/* 	else if (!IGNORE_MODE)
-		exit_(LEXISTS_ERROR, data); */
+	else if (!(data->flags & IGNORE_LINKS))
+		exit_(LEXISTS_ERROR, data);
 }
 
-static bool		link_line(t_data *data)
+static bool	link_line(t_data *data)
 {
 	t_room	*r1;
 	t_room	*r2;
@@ -57,7 +57,7 @@ static bool		link_line(t_data *data)
 		return (false);
 }
 
-bool			init_links(t_data *data)
+bool		init_links(t_data *data)
 {
 	if (comment(data))
 		;

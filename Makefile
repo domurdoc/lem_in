@@ -10,14 +10,13 @@ NAME = lem-in
 SRC_DIR = sources
 OBJ_DIR = objects
 
-#__init_flags.c
-
 SRC_NAMES = __deletion.c \
 	__exit.c \
 	__init_ants.c \
 	__init_ants_check.c \
 	__init_coord_check.c \
 	__init_data.c \
+	__init_flags.c \
 	__init_line_process.c \
 	__init_links.c \
 	__init_prepare.c \
@@ -27,11 +26,21 @@ SRC_NAMES = __deletion.c \
 	__init_utility.c \
 	__link.c \
 	__main.c \
+	__msg.c \
+	__msg_error.c \
+	__msg_error_1.c \
+	__msg_error_2.c \
+	__msg_error_3.c \
+	__msg_help.c \
+	__msg_success.c \
+	__msg_usage.c \
 	__node.c \
 	__output_data.c \
+	__output_extra.c \
 	__output_input.c \
 	__output_line.c \
 	__output_prepare.c \
+	__output_short.c \
 	__output_utility.c \
 	__path.c \
 	__process_bhandari.c \

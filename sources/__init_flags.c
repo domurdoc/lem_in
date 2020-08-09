@@ -9,7 +9,7 @@ void	init_flags(int ac, char **av, t_data *data)
 	while (++i < ac)
 	{
 		if (ft_strequ(av[i], "-h"))
-			help();
+			msg_help();
 		else if (ft_strequ(av[i], "-v"))
 			data->flags |= VERBOSE;
 		else if (ft_strequ(av[i], "-t"))
@@ -23,6 +23,6 @@ void	init_flags(int ac, char **av, t_data *data)
 		else if (ft_strequ(av[i], "-r"))
 			data->flags |= RANDOMIZE;
 		else
-			wrong_flag(av[i]);
+			msg_usage();
 	}
 }

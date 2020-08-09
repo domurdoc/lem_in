@@ -15,7 +15,6 @@ void		ant_name(int32_t n, char *str)
 	*str = '\0';
 }
 
-
 void		buff_flush(t_data *data)
 {
 	if (write(STDOUT_FILENO, data->buff_line, data->i_buff) < 0)

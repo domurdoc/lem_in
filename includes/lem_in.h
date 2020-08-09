@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 15:09:04 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/09 17:04:29 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/09 21:28:14 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,10 @@
 # define GRAPHICS		0x10
 # define RANDOMIZE		0x20
 
-# define IOERROR		-5
 # define MLX_ERROR		-4
-# define MEMORY_ERROR	-3
-# define RNUMBER_ERROR	-2
-# define LNUMBER_ERROR	-1
+# define IOERROR		-3
+# define GNL_ERROR		-2
+# define MEMORY_ERROR	-1
 
 # define OK				0
 
@@ -44,7 +43,6 @@
 # define LITSELF_ERROR	11
 # define LEXISTS_ERROR	12
 # define GRAPH_ERROR	13
-# define GNL_ERROR		14
 
 
 # define DEFAULT_R		1024
@@ -59,10 +57,6 @@
 
 # define PRIMED			(origin->r->primed)
 # define SUCC			(origin->succ)
-
-# define RAND_MODE		(data->flags & RANDOMIZE)
-# define VIS_MODE		(data->flags & GRAPHICS)
-# define IGNORE_MODE	(data->flags & IGNORE_LINKS)
 
 /*
 ** INIT
@@ -90,6 +84,7 @@ int32_t		get_num(char *str, t_data *data);
 uint64_t	count_ch(char *str, char ch);
 uint64_t	count_words(char **words);
 bool		comment(t_data *data);
+t_room		*find_room(t_array *ar, char *name);
 
 
 /*
@@ -120,6 +115,16 @@ void		output_data(t_data *data);
 void		output_prepare(t_data *data);
 void		output_input(t_data *data);
 bool		output_line(t_data *data);
+void		output_short(t_data *data);
+
+/*
+** OUTPUT EXTRA
+*/
+
+void		show_paths(t_data *data);
+void		show_total_0(void);
+void		show_total_1(t_data *data);
+void		show_total(t_data *data);
 
 /*
 ** OUTPUT UTILITY
@@ -129,6 +134,29 @@ void		ant_name(int32_t n, char *str);
 void		buff_fill(const char *src, t_data *data);
 void		buff_flush(t_data *data);
 
+/*
+** MESSAGES
+*/
+
+void		msg(int status, t_data *data);
+void		msg_success(t_data *data);
+void		msg_help(void);
+void		msg_usage(void);
+void		msg_error(int status, t_data *data);
+void		msg_error_number(t_data *data);
+void		msg_error_start_room(t_data *data);
+void		msg_error_end_room(t_data *data);
+void		msg_error_room_name(t_data *data);
+void		msg_error_input_udefined(t_data *data);
+void		msg_error_no_name1(t_data *data);
+void		msg_error_no_name2(t_data *data);
+void		msg_error_link_itself(t_data *data);
+void		msg_error_link_exists(t_data *data);
+void		msg_error_rooms_block(t_data *data);
+void		msg_error_duplicate_room(t_data *data);
+void		msg_error_duplicate_coord(t_data *data);
+void		msg_error_graph(t_data *data);
+void		msg_error_last_line(t_data *data);
 
 /*
 ** ROOM

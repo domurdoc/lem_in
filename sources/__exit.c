@@ -2,6 +2,7 @@
 
 void	exit_(int status, t_data *data)
 {
+	msg(status, data);
 	data_del(data);
 	exit(status);
 }
