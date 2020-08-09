@@ -15,8 +15,6 @@ void	init_simple_check(t_data *data)
 		output_short(data);
 		if (data->flags & PATHS_NUM)
 			show_total_1(data);
-		if (data->flags & SHOW_PATHS)
-			show_paths(data);
 		exit_(OK, data);
 	}
 }

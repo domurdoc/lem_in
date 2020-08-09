@@ -18,5 +18,4 @@ void		output_prepare(t_data *data)
 {
 	ar_del(&data->heap);
 	prepare_set(data);
-	data->i_buff = 0;
 }

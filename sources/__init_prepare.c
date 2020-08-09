@@ -26,5 +26,6 @@ void		init_prepare(t_data *data)
 	data->prev_set = NULL;
 	data->words = NULL;
 	data->k = 0;
+	data->i_buff = 0;
 	data->heap = NULL;
 }
