@@ -34,7 +34,7 @@ void	node_del(t_node *n)
 	if (!n)
 		return ;
 	ar_del(&n->links);
-	free(n->links_saved);
+	ar_del(&n->links_saved);
 	free(n->itself);
 	free(n);
 }

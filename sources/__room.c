@@ -37,4 +37,5 @@ void			room_del(void *r)
 	free(((t_room*)r)->name);
 	node_del(((t_room*)r)->origin);
 	node_del(((t_room*)r)->primed);
+	free(r);
 }

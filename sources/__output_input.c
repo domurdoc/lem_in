@@ -12,4 +12,5 @@ void	output_input(t_data *data)
 	}
 	buff_fill("\n", data);
 	buff_flush(data);
+	ft_memdel((void**)&data->input);
 }
