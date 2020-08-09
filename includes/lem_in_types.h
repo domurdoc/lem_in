@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 15:10:21 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/09 17:03:12 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/10 01:38:03 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ typedef struct		s_point
 	int32_t			x;
 	int32_t			y;
 }					t_point;
+
+typedef struct		s_dpoint
+{
+	double			x;
+	double			y;
+}					t_dpoint;
 
 typedef struct s_room	t_room;
 typedef struct s_node	t_node;
@@ -71,6 +77,9 @@ typedef struct		s_ant
 {
 	char			name[BUFF_ANT];
 	int32_t			r;
+	t_dpoint		coord;
+	t_dpoint		delta;
+	int				color;
 }					t_ant;
 
 typedef struct		s_path
@@ -83,6 +92,25 @@ typedef struct		s_path
 	int32_t			n_f_ants;
 	int32_t			i_ant;
 }					t_path;
+
+typedef struct		s_vis
+{
+	void			*mlx;
+	void			*win;
+	void			*img;
+	int				**img_data;
+	int				bpp;
+	int				line_size;
+	int				endian;
+	int8_t			**img_tunnels;
+	int				d;
+	int8_t			**img_ant;
+	int				img_size;
+	int				img_hsize;
+	int				n;
+	bool			paused;
+	bool			show_rooms;
+}					t_vis;
 
 typedef struct		s_data
 {
@@ -101,6 +129,7 @@ typedef struct		s_data
 	uint64_t		i_buff;
 	int16_t			flags;
 	t_array			*heap; // first for coords then for bheap
+	t_vis			*vis;
 }					t_data;
 
 #endif

@@ -1,5 +1,6 @@
 CC = gcc
 FLAGS = -Wall -Wextra -Werror -g3 -O3
+MLXFLAGS = -lmlx -lXext -lX11 -lm
 
 # PROGRAM name
 
@@ -53,7 +54,19 @@ SRC_NAMES = __deletion.c \
 	__process_utility.c \
 	__room.c \
 	__set.c \
-	__utility.c
+	__utility.c \
+	__vis_brezenham.c \
+	__vis_control.c \
+	__vis_data.c \
+	__vis_img.c \
+	__vis_move.c \
+	__vis_prepare.c \
+	__vis_reset.c \
+	__vis_rooms.c \
+	__vis_template.c \
+	__vis_text.c \
+	__vis_tunnels.c \
+	__vis_utility.c
 
 OBJ_NAMES = $(SRC_NAMES:.c=.o)
 
@@ -81,7 +94,7 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 $(NAME): $(LIBFT) $(OBJ)
-	$(CC) -o $@ $(OBJ) $(LIBFT)
+	$(CC) -o $@ $(OBJ) $(LIBFT) $(MLXFLAGS)
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(INCL)
 	$(CC) -I$(INCL_DIR) -I$(LIB_INCL_DIR) -o $@ -c $< $(FLAGS)

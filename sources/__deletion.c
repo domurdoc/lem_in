@@ -24,4 +24,5 @@ void	data_del(t_data *data)
 	words_del(&data->words);
 	lst_ht_del(data->input, free);
 	ar_del(&data->heap);
+	vis_del(data->vis);
 }

@@ -10,4 +10,6 @@ void	output_data(t_data *data)
 		show_paths(data);
 	if (data->flags & PATHS_NUM)
 		show_total(data);
+	if (data->flags & GRAPHICS)
+		vis_data(data);
 }

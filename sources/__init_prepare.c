@@ -28,4 +28,5 @@ void		init_prepare(t_data *data)
 	data->k = 0;
 	data->i_buff = 0;
 	data->heap = NULL;
+	data->vis = NULL;
 }

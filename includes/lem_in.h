@@ -6,15 +6,31 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 15:09:04 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/09 21:28:14 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/10 02:40:19 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEM_IN_H
 # define LEM_IN_H
 # include <stdbool.h>
+# include <mlx.h>
+# include <math.h>
 # include "libft.h"
 # include "lem_in_types.h"
+
+# define IMG_H			768
+# define IMG_W			1024
+# define IMG_VB			40
+# define IMG_HB			40
+
+# define LINE_COLOR		0xFFFFFF
+# define SROOM_COLOR	0x0000FF
+# define EROOM_COLOR	0xFF0000
+# define BACKGROUND		0x0
+# define MENU_COLOR		0x70 << 16 | 0x70 << 8 | 0x70
+
+# define ROOM_SIZE		30
+# define STEPS			10
 
 # define VERBOSE		0x1
 # define PATHS_NUM		0x2
@@ -130,6 +146,7 @@ void		show_total(t_data *data);
 ** OUTPUT UTILITY
 */
 
+void		nbr_recursion(int32_t n, char **str);
 void		ant_name(int32_t n, char *str);
 void		buff_fill(const char *src, t_data *data);
 void		buff_flush(t_data *data);
@@ -157,6 +174,33 @@ void		msg_error_duplicate_room(t_data *data);
 void		msg_error_duplicate_coord(t_data *data);
 void		msg_error_graph(t_data *data);
 void		msg_error_last_line(t_data *data);
+
+/*
+** VIS
+*/
+
+void		vis_data(t_data *data);
+void		vis_prepare(t_data *data);
+void		line_to_image(t_point p1, t_point p2, int8_t **img);
+int			keyboard_control(int key, t_data *data);
+void		clear_img(int8_t **img, int w, int h);
+void		put_img_tunnels(t_data *data);
+void		put_img_ant(t_ant *ant, t_data *data);
+void		put_img_rooms(t_data *data);
+void		draw_template(t_data *data);
+void		draw_tunnels(t_data *data);
+int			vis_move(t_data *data);
+
+void		show_info(t_data *data);
+void		show_menu(t_data *data);
+void		show_intro_1(t_data *data);
+void		show_intro_2(t_data *data);
+void		show_rooms(t_data *data);
+
+void		vis_del(t_vis *vis);
+void		flush(t_data *data);
+void		room_rand(t_data *data);
+void		reset_set(t_data *data);
 
 /*
 ** ROOM
