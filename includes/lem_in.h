@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 15:09:04 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/09 01:43:32 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/09 17:04:29 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,24 @@ int32_t		min_iter(t_data *data);
 void		backtrack(t_data *data, void (*func)(t_node*, t_data*));
 
 /*
+** OUTPUT
+*/
+
+void		output_data(t_data *data);
+void		output_prepare(t_data *data);
+void		output_input(t_data *data);
+bool		output_line(t_data *data);
+
+/*
+** OUTPUT UTILITY
+*/
+
+void		ant_name(int32_t n, char *str);
+void		buff_fill(const char *src, t_data *data);
+void		buff_flush(t_data *data);
+
+
+/*
 ** ROOM
 */
 
@@ -133,6 +151,13 @@ void		node_del(t_node *n);
 t_link		*link_new(t_node *n, int32_t w);
 void		link_add(t_room *r1, t_room *r2, int32_t w, t_data *data);
 bool		link_exists(t_room *r1, t_room *r2);
+
+/*
+** PATH
+*/
+
+void		path_del(void *p);
+void		*path_convert(void *p0);
 
 /*
 ** SET

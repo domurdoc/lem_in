@@ -28,6 +28,12 @@ SRC_NAMES = __deletion.c \
 	__link.c \
 	__main.c \
 	__node.c \
+	__output_data.c \
+	__output_input.c \
+	__output_line.c \
+	__output_prepare.c \
+	__output_utility.c \
+	__path.c \
 	__process_bhandari.c \
 	__process_data.c \
 	__process_dijkstra.c \

@@ -10,5 +10,5 @@ void	process_data(t_data *data)
 	}
 	if (!data->prev_set)
 		exit_(GRAPH_ERROR, data);
-	ft_printf("iter = %d\n", data->best_set->iter);
+//	ft_printf("iter = %d\n", data->best_set->iter);
 }

@@ -11,7 +11,7 @@ static void	*transform_crd(void *r)
 	return (new);
 }
 
-static void			check_crd(t_data *data)
+static void	check_crd(t_data *data)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ static void			check_crd(t_data *data)
 		}
 }
 
-void				init_coord_check(t_data *data)
+void		init_coord_check(t_data *data)
 {
 	if (!(data->heap = ar_map(data->rooms, transform_crd, free)))
 		exit_(MEMORY_ERROR, data);

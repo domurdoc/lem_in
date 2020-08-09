@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 15:10:21 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/09 01:42:28 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/09 17:03:12 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,23 @@ typedef	struct		s_chk_crd
 	uint64_t		crd;
 	t_room			*r;
 }					t_chk_crd;
+
+typedef struct		s_ant
+{
+	char			name[BUFF_ANT];
+	int32_t			r;
+}					t_ant;
+
+typedef struct		s_path
+{
+	t_room			**rooms;
+	t_ant			*ants;
+	int32_t			n_rooms;
+	int32_t			n_ants;
+	int32_t			n_s_ants;
+	int32_t			n_f_ants;
+	int32_t			i_ant;
+}					t_path;
 
 typedef struct		s_data
 {

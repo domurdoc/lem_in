@@ -1,8 +1,8 @@
 #include "lem_in.h"
 
-static void	path_del(void *p)
+static void	path0_del(void *p0)
 {
-	lst_ht_del((t_lst_ht*)p, NULL);
+	lst_ht_del((t_lst_ht*)p0, NULL);
 }
 
 t_set		*set_new(void)
@@ -11,7 +11,7 @@ t_set		*set_new(void)
 
 	if (!(new = malloc(sizeof(t_set))))
 		return (NULL);
-	if (!(new->paths = ar_new(DEFAULT_P, path_del)))
+	if (!(new->paths = ar_new(DEFAULT_P, path0_del)))
 	{
 		free(new);
 		return (NULL);
