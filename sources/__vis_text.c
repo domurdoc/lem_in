@@ -26,8 +26,8 @@ void	show_menu(t_data *data)
 		"<space> play/pause");
 	mlx_string_put(data->vis->mlx, data->vis->win, 10, 755, MENU_COLOR,
 		"<esc> exit");
-	mlx_string_put(data->vis->mlx, data->vis->win, 935, 755, MENU_COLOR,
-		"<enter> rooms");
+	mlx_string_put(data->vis->mlx, data->vis->win, 933, 755, MENU_COLOR,
+		"<rshift> rooms");
 	mlx_string_put(data->vis->mlx, data->vis->win, 902, 20, MENU_COLOR,
 		"<backspace> restart");
 }

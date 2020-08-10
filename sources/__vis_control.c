@@ -20,7 +20,7 @@ static void	control_reset(int key, t_data *data)
 
 static void	control_rooms(int key, t_data *data)
 {
-	if (key == 65293)
+	if (key == 65506)
 		data->vis->show_rooms = !data->vis->show_rooms;
 }
 
