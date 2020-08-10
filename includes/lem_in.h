@@ -18,10 +18,10 @@
 # include "libft.h"
 # include "lem_in_types.h"
 
-# define IMG_H			768
-# define IMG_W			1024
-# define IMG_VB			40
-# define IMG_HB			40
+# define IMG_H			1080
+# define IMG_W			1920
+# define IMG_VB			50
+# define IMG_HB			50
 
 # define LINE_COLOR		0xFFFFFF
 # define SROOM_COLOR	0x0000FF

@@ -2,25 +2,25 @@
 
 static void	control_exit(int key, t_data *data)
 {
-	if (key == 65307)
+	if (key == 53)
 		exit_(OK, data);
 }
 
 static void	control_pause(int key, t_data *data)
 {
-	if (key == 32)
+	if (key == 49)
 		data->vis->paused = !data->vis->paused;
 }
 
 static void	control_reset(int key, t_data *data)
 {
-	if (key == 65288)
+	if (key == 51)
 		reset_set(data);
 }
 
 static void	control_rooms(int key, t_data *data)
 {
-	if (key == 65506)
+	if (key == 258)
 		data->vis->show_rooms = !data->vis->show_rooms;
 }
 

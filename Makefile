@@ -1,6 +1,7 @@
 CC = gcc
 FLAGS = -Wall -Wextra -Werror -g3 -O3
 MLXFLAGS = -lmlx -lXext -lX11 -lm
+MLX_MAC = -lmlx -framework OpenGL -framework AppKit -lm
 
 # PROGRAM name
 
@@ -94,7 +95,7 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 $(NAME): $(LIBFT) $(OBJ)
-	$(CC) -o $@ $(OBJ) $(LIBFT) $(MLXFLAGS)
+	$(CC) -o $@ $(OBJ) $(LIBFT) $(MLX_MAC)
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(INCL)
 	$(CC) -I$(INCL_DIR) -I$(LIB_INCL_DIR) -o $@ -c $< $(FLAGS)
