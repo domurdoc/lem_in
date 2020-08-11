@@ -10,11 +10,13 @@ DESCRIPTION
 	-t	show number of paths found
 	-p	show paths
 	-i	ignore repeated links
+	-x	do not show input
+	-xx	do not show input and result (additional information still can be shown)
 	-g	show visualization
 	-r	randomize rooms coordinates (only if "g" key activated, otherwise ignored)
 
 	(if "g" is in use while "r" is not, then rooms' coordinates will be checked for duplicates)
-	
+
 	standard input should be:
 	[number of ants]
 	[rooms: name x-coord y-coord; command ##start; command ##end; comment: #...]
