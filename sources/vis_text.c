@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:38:55 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 13:38:55 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/11 15:54:50 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ void	show_info(t_data *data)
 	nbr_recursion(data->vis->n, &str);
 	*str = '\0';
 	mlx_string_put(data->vis->mlx, data->vis->win, 250, 20, MENU_COLOR,
+		data->buff_line);
+	mlx_string_put(data->vis->mlx, data->vis->win, 450, 20, MENU_COLOR,
+		"ROOMS - ");
+	str = data->buff_line;
+	nbr_recursion(data->rooms->len, &str);
+	*str = '\0';
+	mlx_string_put(data->vis->mlx, data->vis->win, 500, 20, MENU_COLOR,
 		data->buff_line);
 }
 
