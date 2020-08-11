@@ -1,6 +1,6 @@
 #include "lem_in.h"
 
-# define D_PRED_PRIMED	(curr->d_pred->r->primed == curr->d_pred)
+#define D_PRED_PRIMED	(curr->d_pred->r->primed == curr->d_pred)
 
 static void	fix_relations(t_data *data)
 {

@@ -17,12 +17,12 @@ void	msg_error_duplicate_room(t_data *data)
 	int64_t	i;
 	char	*name;
 
-	i = data->k + 2;
-	name = ROOM(data->k)->name;
+	i = data->error_r + 2;
+	name = ROOM(data->error_r)->name;
 	while (i < N_ROOMS && ft_strequ(ROOM(i)->name, name))
 		i++;
 	ft_dprintf(STDERR_FILENO, "%d rooms with name %{5}\"%s\"%{0}\n",
-		i - data->k, name);
+		i - data->error_r, name);
 }
 
 void	msg_error_duplicate_coord(t_data *data)
@@ -30,15 +30,15 @@ void	msg_error_duplicate_coord(t_data *data)
 	int64_t		i;
 	uint64_t	coord;
 
-	i = data->k + 2;
-	coord = CRD(data->k)->crd;
+	i = data->error_r + 2;
+	coord = CRD(data->error_r)->crd;
 	while (i < N_ROOMS && CRD(i)->crd == coord)
 		i++;
 	ft_dprintf(STDERR_FILENO, "%d rooms with coordinates %{5}(%d, %d)%{0}:\n",
-			i - data->k, coord >> 32, coord & 0xFFFF);
-	while (data->k < i)
+			i - data->error_r, coord >> 32, coord & 0xFFFF);
+	while (data->error_r < i)
 		ft_dprintf(STDERR_FILENO, "- %{2}\"%s\"%{0}\n",
-			CRD(data->k++)->r->name);
+			CRD(data->error_r++)->r->name);
 }
 
 void	msg_error_graph(t_data *data)

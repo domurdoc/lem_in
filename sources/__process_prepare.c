@@ -31,6 +31,6 @@ void		process_prepare(t_data *data)
 	prepare_links(data);
 	prepare_heap(data);
 	prepare_best_set(data);
-	data->ap = (double)data->n_ants
+	data->n_ants_average = (double)data->n_ants
 		/ ft_min(START->origin->links->len, END->origin->links->len);
 }

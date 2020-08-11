@@ -5,7 +5,8 @@ int32_t	min_iter(t_data *data)
 	double	x;
 	int32_t	y;
 
-	x = (double)data->prev_set->length / data->prev_set->paths->len + data->ap;
+	x = (double)data->prev_set->length / data->prev_set->paths->len
+		+ data->n_ants_average;
 	y = (int32_t)x;
 	return (y < x ? y + 1 : y);
 }

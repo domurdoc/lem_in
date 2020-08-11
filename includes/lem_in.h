@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/14 15:09:04 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/09 21:28:14 by domurdoc         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef LEM_IN_H
 # define LEM_IN_H
 # include <stdbool.h>
@@ -43,7 +31,6 @@
 # define LITSELF_ERROR	11
 # define LEXISTS_ERROR	12
 # define GRAPH_ERROR	13
-
 
 # define DEFAULT_R		1024
 # define DEFAULT_L		32
@@ -85,7 +72,6 @@ uint64_t	count_ch(char *str, char ch);
 uint64_t	count_words(char **words);
 bool		comment(t_data *data);
 t_room		*find_room(t_array *ar, char *name);
-
 
 /*
 ** PROCESS
@@ -193,7 +179,6 @@ void		*path_convert(void *p0);
 
 t_set		*set_new(void);
 void		set_del(t_set *s);
-
 
 /*
 ** UTILITY

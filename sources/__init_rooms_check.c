@@ -8,7 +8,7 @@ static void	check_names(t_data *data)
 	while (++i < N_ROOMS)
 		if (!cmp_names(ROOM(i), ROOM(i - 1)))
 		{
-			data->k = i - 1;
+			data->error_r = i - 1;
 			exit_(DROOM_ERROR, data);
 		}
 }

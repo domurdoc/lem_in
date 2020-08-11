@@ -19,7 +19,7 @@ static void	check_crd(t_data *data)
 	while (++i < data->heap->len)
 		if (!cmp_crd(data->heap->data[i], data->heap->data[i - 1]))
 		{
-			data->k = i - 1;
+			data->error_r = i - 1;
 			exit_(DCOORD_ERROR, data);
 		}
 }
