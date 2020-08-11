@@ -10,8 +10,7 @@ NAME = lem-in
 SRC_DIR = sources
 OBJ_DIR = objects
 
-SRC_NAMES = __deletion.c \
-	__exit.c \
+SRC_NAMES = __cmp.c \
 	__init_ants.c \
 	__init_ants_check.c \
 	__init_coord_check.c \

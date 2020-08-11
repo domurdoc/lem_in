@@ -181,13 +181,18 @@ t_set		*set_new(void);
 void		set_del(t_set *s);
 
 /*
-** UTILITY
+** CMP
 */
 
 int			cmp_names(void *r1, void *r2);
 int			cmp_dist(void *n1, void *n2);
 int			cmp_crd(void *crd1, void *crd2);
 int			cmp_links(void *l1, void *l2);
+
+/*
+** UTILITY
+*/
+
 void		exit_(int status, t_data *data);
 void		data_del(t_data *data);
 void		words_del(char ***words);

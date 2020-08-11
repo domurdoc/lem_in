@@ -1,36 +1,34 @@
 #include "lem_in.h"
 
-int	cmp_dist(void *n1, void *n2)
+void	words_del(char ***words)
 {
-	if (((t_node*)n1)->dist < ((t_node*)n2)->dist)
-		return (-1);
-	else if (((t_node*)n1)->dist > ((t_node*)n2)->dist)
-		return (1);
-	else
-		return (0);
+	uint64_t	i;
+
+	i = 0;
+	if (*words)
+	{
+		while ((*words)[i])
+			free((*words)[i++]);
+		free(*words);
+		*words = NULL;
+	}
 }
 
-int	cmp_names(void *r1, void *r2)
+void	data_del(t_data *data)
 {
-	return (ft_strcmp(((t_room*)r1)->name, ((t_room*)r2)->name));
+	ar_del(&data->rooms);
+	set_del(data->best_set);
+	set_del(data->curr_set);
+	if (data->best_set != data->prev_set)
+		set_del(data->prev_set);
+	words_del(&data->words);
+	lst_ht_del(data->input, free);
+	ar_del(&data->heap);
 }
 
-int	cmp_crd(void *crd1, void *crd2)
+void	exit_(int status, t_data *data)
 {
-	if (((t_chk_crd*)crd1)->crd < ((t_chk_crd*)crd2)->crd)
-		return (-1);
-	else if (((t_chk_crd*)crd1)->crd > ((t_chk_crd*)crd2)->crd)
-		return (1);
-	else
-		return (0);
-}
-
-int	cmp_links(void *l1, void *l2)
-{
-	if (((t_link*)l1)->n < ((t_link*)l2)->n)
-		return (-1);
-	else if (((t_link*)l1)->n > ((t_link*)l2)->n)
-		return (1);
-	else
-		return (0);
+	msg(status, data);
+	data_del(data);
+	exit(status);
 }
