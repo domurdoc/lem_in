@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 12:40:59 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 12:41:00 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/11 19:30:43 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct		s_link
 	int32_t			w;
 }					t_link;
 
-typedef	struct		s_node
+struct				s_node
 {
 	t_room			*r;
 	t_array			*links;
@@ -49,7 +49,7 @@ typedef	struct		s_node
 	struct s_node	*pred;
 	struct s_node	*succ;
 	t_link			*itself;
-}					t_node;
+};
 
 typedef struct		s_set
 {
