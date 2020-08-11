@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/14 15:10:21 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/10 01:38:03 by domurdoc         ###   ########.fr       */
+/*   Created: 2020/08/11 12:40:59 by domurdoc          #+#    #+#             */
+/*   Updated: 2020/08/11 13:29:20 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # define BUFF_LINE	32192
 # define BUFF_ANT	16
+
+typedef struct s_node	t_node;
 
 typedef struct		s_point
 {
@@ -27,9 +29,6 @@ typedef struct		s_dpoint
 	double			x;
 	double			y;
 }					t_dpoint;
-
-typedef struct s_room	t_room;
-typedef struct s_node	t_node;
 
 typedef struct		s_room
 {
@@ -118,8 +117,8 @@ typedef struct		s_data
 	t_array			*rooms;
 	t_room			*start_room;
 	t_room			*end_room;
-	int32_t			k; // error management
-	double			ap; // optimization
+	int32_t			error_r;
+	double			n_ants_average;
 	t_set			*best_set;
 	t_set			*curr_set;
 	t_set			*prev_set;
@@ -128,7 +127,7 @@ typedef struct		s_data
 	char			buff_line[BUFF_LINE];
 	uint64_t		i_buff;
 	int16_t			flags;
-	t_array			*heap; // first for coords then for bheap
+	t_array			*heap;
 	t_vis			*vis;
 }					t_data;
 
