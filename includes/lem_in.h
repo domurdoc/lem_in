@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/14 15:09:04 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/10 02:40:19 by domurdoc         ###   ########.fr       */
+/*   Created: 2020/08/11 12:39:19 by domurdoc          #+#    #+#             */
+/*   Updated: 2020/08/11 13:26:57 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@
 # define LEXISTS_ERROR	12
 # define GRAPH_ERROR	13
 
-
 # define DEFAULT_R		1024
 # define DEFAULT_L		32
 # define DEFAULT_P		32
@@ -101,7 +100,6 @@ uint64_t	count_ch(char *str, char ch);
 uint64_t	count_words(char **words);
 bool		comment(t_data *data);
 t_room		*find_room(t_array *ar, char *name);
-
 
 /*
 ** PROCESS
@@ -238,15 +236,19 @@ void		*path_convert(void *p0);
 t_set		*set_new(void);
 void		set_del(t_set *s);
 
-
 /*
-** UTILITY
+** CMP
 */
 
 int			cmp_names(void *r1, void *r2);
 int			cmp_dist(void *n1, void *n2);
 int			cmp_crd(void *crd1, void *crd2);
 int			cmp_links(void *l1, void *l2);
+
+/*
+** UTILITY
+*/
+
 void		exit_(int status, t_data *data);
 void		data_del(t_data *data);
 void		words_del(char ***words);

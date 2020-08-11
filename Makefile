@@ -1,7 +1,6 @@
 CC = gcc
 FLAGS = -Wall -Wextra -Werror -g3 -O3
-MLXFLAGS = -lmlx -lXext -lX11 -lm
-MLX_MAC = -lmlx -framework OpenGL -framework AppKit -lm
+MLXFLAGS = -lmlx -framework OpenGL -framework AppKit -lm
 
 # PROGRAM name
 
@@ -12,62 +11,61 @@ NAME = lem-in
 SRC_DIR = sources
 OBJ_DIR = objects
 
-SRC_NAMES = __deletion.c \
-	__exit.c \
-	__init_ants.c \
-	__init_ants_check.c \
-	__init_coord_check.c \
-	__init_data.c \
-	__init_flags.c \
-	__init_line_process.c \
-	__init_links.c \
-	__init_prepare.c \
-	__init_rooms.c \
-	__init_rooms_check.c \
-	__init_simple_check.c \
-	__init_utility.c \
-	__link.c \
-	__main.c \
-	__msg.c \
-	__msg_error.c \
-	__msg_error_1.c \
-	__msg_error_2.c \
-	__msg_error_3.c \
-	__msg_help.c \
-	__msg_success.c \
-	__msg_usage.c \
-	__node.c \
-	__output_data.c \
-	__output_extra.c \
-	__output_input.c \
-	__output_line.c \
-	__output_prepare.c \
-	__output_short.c \
-	__output_utility.c \
-	__path.c \
-	__process_bhandari.c \
-	__process_data.c \
-	__process_dijkstra.c \
-	__process_mod_graph.c \
-	__process_prepare.c \
-	__process_rest_graph.c \
-	__process_set.c \
-	__process_utility.c \
-	__room.c \
-	__set.c \
-	__utility.c \
-	__vis_brezenham.c \
-	__vis_control.c \
-	__vis_data.c \
-	__vis_img.c \
-	__vis_move.c \
-	__vis_prepare.c \
-	__vis_reset.c \
-	__vis_rooms.c \
-	__vis_template.c \
-	__vis_text.c \
-	__vis_tunnels.c \
-	__vis_utility.c
+SRC_NAMES = cmp.c \
+	init_ants.c \
+	init_ants_check.c \
+	init_coord_check.c \
+	init_data.c \
+	init_flags.c \
+	init_line_process.c \
+	init_links.c \
+	init_prepare.c \
+	init_rooms.c \
+	init_rooms_check.c \
+	init_simple_check.c \
+	init_utility.c \
+	link.c \
+	main.c \
+	msg.c \
+	msg_error.c \
+	msg_error_1.c \
+	msg_error_2.c \
+	msg_error_3.c \
+	msg_help.c \
+	msg_success.c \
+	msg_usage.c \
+	node.c \
+	output_data.c \
+	output_extra.c \
+	output_input.c \
+	output_line.c \
+	output_prepare.c \
+	output_short.c \
+	output_utility.c \
+	path.c \
+	process_bhandari.c \
+	process_data.c \
+	process_dijkstra.c \
+	process_mod_graph.c \
+	process_prepare.c \
+	process_rest_graph.c \
+	process_set.c \
+	process_utility.c \
+	room.c \
+	set.c \
+	utility.c \
+	vis_brezenham.c \
+	vis_control.c \
+	vis_data.c \
+	vis_img.c \
+	vis_move.c \
+	vis_prepare.c \
+	vis_reset.c \
+	vis_rooms.c \
+	vis_template.c \
+	vis_text.c \
+	vis_tunnels.c \
+	vis_utility.c
 
 OBJ_NAMES = $(SRC_NAMES:.c=.o)
 
@@ -95,7 +93,7 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 $(NAME): $(LIBFT) $(OBJ)
-	$(CC) -o $@ $(OBJ) $(LIBFT) $(MLX_MAC)
+	$(CC) -o $@ $(OBJ) $(LIBFT) $(MLXFLAGS)
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(INCL)
 	$(CC) -I$(INCL_DIR) -I$(LIB_INCL_DIR) -o $@ -c $< $(FLAGS)
