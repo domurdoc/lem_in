@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 12:39:19 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 13:26:57 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/11 14:52:39 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@
 # define IGNORE_LINKS	0x8
 # define GRAPHICS		0x10
 # define RANDOMIZE		0x20
+# define OMMIT_INPUT	0x40
+# define OMMIT_ALL		0x80
 
 # define MLX_ERROR		-4
 # define IOERROR		-3
