@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 12:39:19 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 14:00:20 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/11 14:12:40 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define PATHS_NUM		0x2
 # define SHOW_PATHS		0x4
 # define IGNORE_LINKS	0x8
+# define OMMIT_INPUT	0x10
+# define OMMIT_ALL		0x20
 
 # define IOERROR		-3
 # define GNL_ERROR		-2

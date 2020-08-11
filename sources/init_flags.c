@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:04:02 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 13:56:00 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/11 14:12:58 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	init_flags(int ac, char **av, t_data *data)
 			data->flags |= SHOW_PATHS;
 		else if (ft_strequ(av[i], "-i"))
 			data->flags |= IGNORE_LINKS;
+		else if (ft_strequ(av[i], "-x"))
+			data->flags |= OMMIT_INPUT;
+		else if (ft_strequ(av[i], "-xx"))
+			data->flags |= OMMIT_ALL;
 		else
 			msg_usage();
 	}
