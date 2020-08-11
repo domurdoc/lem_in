@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:04:14 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 13:04:14 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/11 13:57:57 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ void		init_rooms_check(t_data *data)
 	room_del(ROOM(--N_ROOMS));
 	(void)ar_quicksort(data->rooms);
 	check_names(data);
-	if (!(data->flags & RANDOMIZE) && data->flags & GRAPHICS)
-		init_coord_check(data);
+	init_coord_check(data);
 }

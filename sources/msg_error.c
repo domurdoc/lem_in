@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:04:28 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 13:04:28 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/11 14:00:46 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static void	error_message(int status)
 	msg[0] = "not enough memory";
 	msg[1] = "gnl";
 	msg[2] = "i/o error";
-	msg[3] = "mlx";
 	ft_dprintf(STDERR_FILENO, "%{2}%s%{0}\n", msg[-status - 1]);
 }
 
