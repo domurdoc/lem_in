@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:04:02 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 14:12:58 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/11 15:21:04 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,22 @@
 
 void	init_flags(int ac, char **av, t_data *data)
 {
-	int	i;
-
-	i = 0;
 	data->flags = 0;
-	while (++i < ac)
+	while (--ac)
 	{
-		if (ft_strequ(av[i], "-h"))
+		if (ft_strequ(av[ac], "-h"))
 			msg_help();
-		else if (ft_strequ(av[i], "-v"))
+		else if (ft_strequ(av[ac], "-v"))
 			data->flags |= VERBOSE;
-		else if (ft_strequ(av[i], "-t"))
+		else if (ft_strequ(av[ac], "-t"))
 			data->flags |= PATHS_NUM;
-		else if (ft_strequ(av[i], "-p"))
+		else if (ft_strequ(av[ac], "-p"))
 			data->flags |= SHOW_PATHS;
-		else if (ft_strequ(av[i], "-i"))
+		else if (ft_strequ(av[ac], "-i"))
 			data->flags |= IGNORE_LINKS;
-		else if (ft_strequ(av[i], "-x"))
+		else if (ft_strequ(av[ac], "-x"))
 			data->flags |= OMMIT_INPUT;
-		else if (ft_strequ(av[i], "-xx"))
+		else if (ft_strequ(av[ac], "-xx"))
 			data->flags |= OMMIT_ALL;
 		else
 			msg_usage();
