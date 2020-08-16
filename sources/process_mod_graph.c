@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:05:14 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 13:05:14 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/16 15:18:17 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static void		mod_node(t_node *origin, t_data *data)
 	{
 		if (!PRIMED)
 		{
-			if (!(PRIMED = node_new(origin->r, 1, NULL)))
+			if (!(PRIMED = node_new(origin->r, 1, free)))
 				exit_(MEMORY_ERROR, data);
 			PRIMED->pred = origin;
 		}
