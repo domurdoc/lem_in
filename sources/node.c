@@ -6,20 +6,20 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:04:44 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 13:04:44 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/16 15:38:22 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_node	*node_new(t_room *r, uint32_t n_links, void (*del)(void*))
+t_node	*node_new(t_room *r, uint32_t n_links)
 {
 	t_node	*new;
 
 	if (!(new = malloc(sizeof(t_node))))
 		return (NULL);
 	new->r = r;
-	if (!(new->links = ar_new(n_links, del)))
+	if (!(new->links = ar_new(n_links, free)))
 	{
 		free(new);
 		return (NULL);
