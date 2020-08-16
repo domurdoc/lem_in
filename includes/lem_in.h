@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 12:39:19 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 14:52:39 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/16 15:23:56 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,7 +213,7 @@ void		room_del(void *r);
 ** NODE
 */
 
-t_node		*node_new(t_room *r, uint32_t n_links, void (*del)(void*));
+t_node		*node_new(t_room *r, uint32_t n_links);
 void		node_del(t_node *n);
 
 /*

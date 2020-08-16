@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:05:26 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 13:05:27 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/08/16 15:24:13 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static t_room	*room_new(void)
 
 	if (!(new = malloc(sizeof(t_room))))
 		return (NULL);
-	if (!(new->origin = node_new(new, DEFAULT_L, free)))
+	if (!(new->origin = node_new(new, DEFAULT_L)))
 	{
 		free(new);
 		return (NULL);
