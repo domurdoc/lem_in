@@ -6,7 +6,7 @@
 /*   By: domurdoc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:04:46 by domurdoc          #+#    #+#             */
-/*   Updated: 2020/08/11 14:19:38 by domurdoc         ###   ########.fr       */
+/*   Updated: 2020/12/27 01:27:55 by domurdoc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	output_data(t_data *data)
 {
-	if (!(data->flags & OMMIT_ALL))
+    if (!(data->flags & OMMIT_ALL) || data->flags & SHOW_PATHS)
+    {
+        output_prepare(data);
+    }
+    if (!(data->flags & OMMIT_ALL))
 	{
 		if (!(data->flags & OMMIT_INPUT))
 			output_input(data);
-		output_prepare(data);
 		while (output_line(data))
 			;
 	}
